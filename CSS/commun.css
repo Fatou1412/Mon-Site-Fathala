@@ -89,3 +89,27 @@
         border-style: none none groove none;/* Ligne à ajouter */
     }
 }
+
+.bordure {
+    border: var(--border-main);
+    border-radius: 12px;
+}
+
+.bordure2 {
+    border-radius: 25px;
+    border: var(--border-thick);
+}
+
+.ombre{
+    box-shadow: var(--shadow-main);
+}
+
+.ombre2 {
+    box-shadow: var(--shadow-soft);
+}
+
+.confpic {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
