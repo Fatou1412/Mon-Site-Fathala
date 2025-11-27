@@ -1,0 +1,58 @@
+#A\ propos\ de\ nous .content {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5%;
+    gap: 2rem;
+    min-height: 600px;
+}
+
+#A\ propos\ de\ nous .images {
+    position: relative;
+    width: 50%;
+    height: 80%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#A\ propos\ de\ nous .explis {
+    position: relative;
+    width: 50%;
+    align-self: center;
+}
+
+#A\ propos\ de\ nous .content img {
+    width: 50%;
+    height: auto;
+    position: absolute;
+}
+
+#A\ propos\ de\ nous .explis span {
+    line-height: 2rem;
+    text-align: justify;
+    font-size: 2vh;
+    letter-spacing: 0.2rem;
+    padding: 2%;
+    height: 50vh;
+    display: block;
+}
+
+.images img:nth-child(1) { 
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.images img:nth-child(2) { 
+    bottom: 15%; 
+    left: 10%;
+    transform: translateX(0);
+}
+
+.images img:nth-child(3) { 
+    bottom: 15%; 
+    right: 10%;
+    transform: translateX(0);
+}
+
