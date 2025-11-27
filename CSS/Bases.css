@@ -49,7 +49,6 @@ header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Galle
         "content content content"
         "content content content"
         "content content content"
-        "content content content"
         ; 
 }
 
@@ -70,4 +69,5 @@ header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Galle
 header.headerall {
     grid-area: headerall;
 }
+
 
