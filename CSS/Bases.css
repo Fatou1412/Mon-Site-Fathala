@@ -48,13 +48,16 @@ header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Galle
         "content content content"
         "content content content"
         "content content content"
-        "content content content"; 
+        "content content content"
+        "content content content"
+        ; 
 }
 
 .content {
-    grid-area: content;
-    background-color: #18c753;
-}
+    grid-area: content
+    ;
+
+
 #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Gallerie {
     .headerall {
         grid-area: headerall;
@@ -66,6 +69,5 @@ header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Galle
 
 header.headerall {
     grid-area: headerall;
-    background-color: #6ca5df;
 }
 

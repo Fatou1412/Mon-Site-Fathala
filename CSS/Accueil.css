@@ -1,0 +1,9 @@
+header {
+    background-image: url(../pics/Saloum\ Accueil.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+header .logo img {
+    width: 80%;
+}
