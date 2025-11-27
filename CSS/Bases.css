@@ -1,0 +1,22 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Style spécifique pour le logo en haut à gauche */
+.logo {
+    position: fixed; /* reste en place quand on scroll */
+    top: 8px;
+    left: 8px;
+    width: 120px; /* changez cette valeur si besoin */
+    height: auto;
+    z-index: 1000;
+}
+
