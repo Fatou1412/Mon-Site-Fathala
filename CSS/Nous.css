@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: row;
     padding: 0 5%;
-    gap: 2rem;
+    gap: 3rem;
     min-height: 600px;
 }
 
 #A\ propos\ de\ nous .images {
     position: relative;
     width: 50%;
-    height: 80%;
+    height: 500px;
     align-self: center;
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@
 }
 
 #A\ propos\ de\ nous .content img {
-    width: 50%;
+    width: 30%;
     height: auto;
     position: absolute;
 }
@@ -39,20 +39,80 @@
 }
 
 .images img:nth-child(1) { 
-    top: 0; 
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .images img:nth-child(2) { 
-    bottom: 15%; 
+    bottom: 10%;
     left: 10%;
     transform: translateX(0);
 }
 
 .images img:nth-child(3) { 
-    bottom: 15%; 
+    bottom: 10%;
     right: 10%;
     transform: translateX(0);
 }
 
+
+#A\ propos\ de\ nous .content img {
+    width: 40%;
+    height: 50%;
+    position: absolute;
+}
+
+/* Images positioning optimized */
+.images img:nth-child(1) { 
+    top: 20%; 
+    left: 10%;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.images img:nth-child(2) { 
+    bottom: 5%; 
+    left: 10%; 
+    z-index: 2;
+}
+
+.images img:nth-child(3) { 
+    bottom: 30%; 
+    left: 35%; 
+    z-index: 4;
+}
+
+
+/* Masquer tous les spans par défaut */
+#A\ propos\ de\ nous .explis span {
+    line-height: 2rem;
+    text-align: justify;
+    font-size: 2vh;
+    letter-spacing: 0.2rem;
+    padding: 2%;
+    height: 50vh;
+    display: none;
+    overflow-y: auto;
+}
+
+/* Afficher le premier span par défaut */
+#A\ propos\ de\ nous .explis span:nth-child(1) {
+    display: block;
+    text-align: justify;
+    opacity: 1;
+}
+
+/* Solution ultra-générique : quand une image est survolée, masquer tous les spans */
+#A\ propos\ de\ nous .content:has(.images img:hover) .explis span {
+    display: none;
+    opacity: 0;
+}
+
+/* Puis afficher uniquement le span correspondant à l'index de l'image survolée */
+#A\ propos\ de\ nous .content:has(.images img:nth-child(1):hover) .explis span:nth-child(1),
+#A\ propos\ de\ nous .content:has(.images img:nth-child(2):hover) .explis span:nth-child(3),
+#A\ propos\ de\ nous .content:has(.images img:nth-child(3):hover) .explis span:nth-child(4) {
+    display: block;
+    opacity: 1;
+}
