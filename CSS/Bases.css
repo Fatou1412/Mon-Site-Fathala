@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 :root {
     --primary-color: #C1B086;
     --shadow-main: 6px 6px 6px #000000;
@@ -13,6 +15,7 @@ html, body {
     padding: 0;
     height: 100vh;
     overflow: hidden;
+    font-family: var(--font-main);
 }
 
 img {
