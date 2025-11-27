@@ -1,3 +1,15 @@
+#A\ propos\ de\ nous {
+    background-image: url("../pics/Saloum1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#A\ propos\ de\ nous .headerall h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 #A\ propos\ de\ nous .content {
     display: flex;
     flex-direction: row;
@@ -30,12 +42,14 @@
 
 #A\ propos\ de\ nous .explis span {
     line-height: 2rem;
-    text-align: justify;
+    text-align: center;
     font-size: 2vh;
     letter-spacing: 0.2rem;
     padding: 2%;
     height: 50vh;
     display: block;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .images img:nth-child(1) { 
@@ -61,6 +75,9 @@
     width: 40%;
     height: 50%;
     position: absolute;
+    transition: var(--transition-smooth);
+    filter: blur(2px);
+    opacity: 0.7;
 }
 
 /* Images positioning optimized */
@@ -87,19 +104,21 @@
 /* Masquer tous les spans par défaut */
 #A\ propos\ de\ nous .explis span {
     line-height: 2rem;
-    text-align: justify;
+    text-align: center !important;
     font-size: 2vh;
     letter-spacing: 0.2rem;
     padding: 2%;
     height: 50vh;
     display: none;
     overflow-y: auto;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Afficher le premier span par défaut */
 #A\ propos\ de\ nous .explis span:nth-child(1) {
     display: block;
-    text-align: justify;
+    text-align: center;
     opacity: 1;
 }
 
@@ -115,4 +134,27 @@
 #A\ propos\ de\ nous .content:has(.images img:nth-child(3):hover) .explis span:nth-child(4) {
     display: block;
     opacity: 1;
+}
+
+/* Hover générique pour toutes les images */
+.images img:hover {
+    z-index: 10 !important;
+    filter: brightness(1.1) saturate(1.2) blur(0px) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    opacity: 1 !important;
+}
+
+/* Quand on survole une image, toutes les autres deviennent floues */
+.images:hover img:not(:hover) {
+    /* filter: blur(5px) !important; */
+    opacity: 0.5 !important;
+}
+
+/* Hover spécifique avec rotations alternées */
+.images img:nth-child(odd):hover {
+    transform: scale(1.3) rotate(4deg);
+}
+
+.images img:nth-child(even):hover {
+    transform: scale(1.3) rotate(-4deg);
 }

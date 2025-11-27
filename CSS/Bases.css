@@ -49,7 +49,11 @@ header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Galle
         "content content content"
         "content content content"
         "content content content"
-        ; 
+        ;
+    background-image: url("../pics/Saloum1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .content {
@@ -60,14 +64,13 @@ header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Galle
 #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Gallerie {
     .headerall {
         grid-area: headerall;
-        background-image: url("../pics/Fathala\ vue.jpg");
+        background-image: url("../pics/Saloum1.jpg");
         background-repeat: no-repeat;
-        background-size:cover;
+        background-size: cover;
+        background-position: center;
     }
 }
 
 header.headerall {
     grid-area: headerall;
 }
-
-
