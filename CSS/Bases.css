@@ -1,3 +1,7 @@
+:root {
+    --primary-color: #C1B086;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -11,12 +15,14 @@ img {
 }
 
 .logo {
-    position: fixed; /* reste en place quand on scroll */
-    top: 8px;
-    left: 8px;
     width: 120px; /* changez cette valeur si besoin */
     height: auto;
-    z-index: 1000;
+    display: block;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
 }
 
 header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Gallerie {
@@ -26,7 +32,7 @@ header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Galle
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 0px 0px; 
+    gap: 0px; 
     grid-template-areas: 
         "headerall headerall headerall"
         "content content content"
@@ -39,32 +45,17 @@ header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Galle
     grid-area: content;
     background-color: #18c753;
 }
+#A propos de nous, #Nos activités, #Hébergement, #Restauration, #Gallerie {
+    .headerall {
+        grid-area: headerall;
+        background-image: url("../pics/Fathala\ vue.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+}
 
-.headerall {
+header.headerall {
     grid-area: headerall;
     background-color: #6ca5df;
 }
 
-header {
-    border-left: 8px solid #da53ad;
-}
-
-#A propos de nous {
-    border-left: 8px solid #53da6a;
-}
-
-#Nos activités {
-    border-left: 8px solid #93a726;
-}
-
-#Hébergement {
-    border-left: 8px solid #b6238a;
-}
-
-#Restauration {
-    border-left: 8px solid #0e925f;
-}
-
-#Gallerie {
-    border-left: 8px solid #250eaa;
-}
