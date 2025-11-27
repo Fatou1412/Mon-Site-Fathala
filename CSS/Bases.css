@@ -1,5 +1,11 @@
 :root {
     --primary-color: #C1B086;
+    --shadow-main: 6px 6px 6px #000000;
+    --shadow-soft: 0 13px 43px 0 rgb(37 46 89/10%);
+    --border-main: 2px solid var(--primary-color);
+    --border-thick: 4px solid var(--primary-color);
+    --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --font-main: 'Roboto Slab', serif;
 }
 
 html, body {
