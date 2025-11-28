@@ -18,6 +18,15 @@ html, body {
     font-family: var(--font-main);
 }
 
+/* Central site background applied uniformly to all pages */
+html, body {
+    background-image: url("../pics/Saloum1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -36,40 +45,27 @@ img {
 }
 
 header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Gallerie {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow: hidden; /* prevent content (absolute images) from overflowing into next sections */
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: auto 1fr;
     gap: 0px; 
     grid-template-areas: 
         "headerall headerall headerall"
         "content content content"
-        "content content content"
-        "content content content"
-        "content content content"
         ;
-    background-image: url("../pics/Saloum1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
 }
+    /* background-image moved to top-level html, body in this file to ensure a single uniform background */
 
 .content {
     grid-area: content
     ;}
 
 
-#A propos de nous, #Nos activités, #Hébergement, #Restauration, #Gallerie {
-    .headerall {
-        grid-area: headerall;
-        background-image: url("../pics/Saloum1.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-}
+/* per-section header rules removed to avoid duplicate backgrounds;
+   the site background is now handled at the top-level html, body selector */
 
 header.headerall {
     grid-area: headerall;

@@ -1,8 +1,9 @@
 #A\ propos\ de\ nous {
-    background-image: url("../pics/Saloum1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    /* background moved to central html/body in Bases.css */
+    /* background-image: url("../pics/Saloum1.jpg"); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-attachment: fixed; */
 }
 
 #A\ propos\ de\ nous .headerall h2 {

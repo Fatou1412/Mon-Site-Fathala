@@ -1,7 +1,8 @@
+/* header background is now handled centrally in Bases.css (html, body) */
 header {
-    background-image: url(../pics/Saloum1.jpg);
-    background-size: cover;
-    background-position: center;
+    /* background-image: url(../pics/Saloum1.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
 }
 
 header .logo img {

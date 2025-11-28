@@ -1,8 +1,10 @@
-#amenities > .content {
-
+section[id="Nos activités"] > .content {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
     align-items: center;
     justify-items: center;
+    /* ensure the section is visible even if it's empty */
+    min-height: 300px;
+    padding: 3rem 2rem;
 }
