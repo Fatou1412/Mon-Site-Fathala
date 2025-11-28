@@ -47,41 +47,28 @@ section[id="Nos activités"] > .content {
     z-index: 1;
 }
 
+
 .content #explications{
-    /* Match the width of the first table and increase length but keep bottom visible */
-    width: 80%;
-    margin: 0; /* zero margin - no gap */
-    position: relative;
-    transform: translateY(-48px); /* push much higher for adjacency */
-    min-height: 260px; /* increase height */
-    max-height: 800px; /* cap vertical content */
-    overflow-y: auto; /* allow scrolling if content is larger */
-    background-color: rgba(12, 5, 5, 0.3);
-    padding: 0.35rem; /* reduce padding to tighten content */
-    box-sizing: border-box;
-    border-radius: 6px;
-    z-index: 2;
+    overflow: hidden;
+    height: 95%;
+    width: 50%;
+}
+section[id="Nos activités"] #liste:hover {
+    cursor: pointer;
 }
 
-/* make each activity tile more compact */
-#liste > .Nos.activités {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-    padding: 0.4rem;
+section[id="Nos activités"] .content i {
+    margin: 5px 20px 0 10px;
 }
-
 #explications div span {
     background: rgba(255, 255, 255, 0.72);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bolder;
     text-align: center;
-    padding: 1rem;
+    padding: 0.7rem;
     display: block;
 }
 
