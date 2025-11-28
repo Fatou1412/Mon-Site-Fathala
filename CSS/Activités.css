@@ -4,7 +4,28 @@ section[id="Nos activités"] > .content {
     grid-template-rows: 1fr 2fr;
     align-items: center;
     justify-items: center;
-    /* ensure the section is visible even if it's empty */
     min-height: 300px;
     padding: 3rem 2rem;
+}
+
+
+section[id="Nos activités"] > .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+    gap: 2rem;
+}
+
+.content #liste{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(2, 8, 14, 0.801);
+}
+
+.content #explications{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(12, 5, 5, 0.3);
 }

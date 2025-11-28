@@ -44,7 +44,7 @@ img {
     align-items: center;
 }
 
-header, #A propos de nous, #Nos activités, #Hébergement, #Restauration, #Gallerie {
+header, section[id="A propos de nous"], section[id="Nos activités"], section[id="Hébergement"], section[id="Restauration"], section[id="Gallerie"] {
     min-height: 100vh;
     width: 100vw;
     overflow: hidden; /* prevent content (absolute images) from overflowing into next sections */
