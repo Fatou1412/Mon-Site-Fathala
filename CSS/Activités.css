@@ -48,11 +48,14 @@ section[id="Nos activités"] > .content {
 }
 
 
-.content #explications{
+/* Conteneur d'explications avec position relative */
+.content #explications {
     overflow: hidden;
     height: 95%;
     width: 50%;
+    position: relative;
 }
+
 section[id="Nos activités"] #liste:hover {
     cursor: pointer;
 }
@@ -60,6 +63,7 @@ section[id="Nos activités"] #liste:hover {
 section[id="Nos activités"] .content i {
     margin: 5px 20px 0 10px;
 }
+
 #explications div span {
     background: rgba(255, 255, 255, 0.72);
     border-radius: 16px;
@@ -72,8 +76,53 @@ section[id="Nos activités"] .content i {
     display: block;
 }
 
-#expli1 {
-    padding: 1rem;;
+/* Tous les divs d'explication cachés hors-écran par défaut */
+#explications div {
+    position: absolute;
+    bottom: -110%;
     height: 100%;
+    width: 100%;
+    transition: bottom 0.8s ease-in-out;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Utiliser :has() avec le parent .content pour détecter le survol */
+section[id="Nos activités"] .content:has(.Nos.activités:nth-child(1):hover) #expl1 {
+    bottom: 0;
     background-image: url("../pics/Safari Guidée.jpg");
+}
+
+section[id="Nos activités"] .content:has(.Nos.activités:nth-child(2):hover) #expl2 {
+    bottom: 0;
+    background-image: url("../pics/rencontre avec le lion.jpg");
+}
+
+section[id="Nos activités"] .content:has(.Nos.activités:nth-child(3):hover) #expl3 {
+    bottom: 0;
+    background-image: url("../pics/voyage mangrove.jpg");
+}
+
+section[id="Nos activités"] .content:has(.Nos.activités:nth-child(4):hover) #expl4 {
+    bottom: 0;
+    background-image: url("../pics/EXCURSION ILE 1.jpg");
+}
+
+section[id="Nos activités"] .content:has(.Nos.activités:nth-child(5):hover) #expl5 {
+    bottom: 0;
+    background-image: url("../pics/visite du village.jpg");
+}
+
+section[id="Nos activités"] .content:has(.Nos.activités:nth-child(6):hover) #expl6 {
+    bottom: 0;
+    background-image: url("../pics/SAFARI ET OISEAUX.jpg");
+}
+
+/* Tuile survolée : changement de couleur */
+.Nos.activités:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.6) !important;
 }
