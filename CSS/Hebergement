@@ -1,0 +1,47 @@
+/* Hebergement styles: gallery and intro */
+section[id="Hébergement"] .hebergement-intro {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+section[id="Hébergement"] .hebergement-title {
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+section[id="Hébergement"] .hebergement-desc {
+    margin: 0 auto;
+    max-width: 900px;
+    color: #fff;
+    opacity: 0.95;
+}
+
+section[id="Hébergement"] .hebergement-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    padding: 1rem 1.5rem 2.5rem 1.5rem;
+}
+
+section[id="Hébergement"] .hebergement-gallery .bordure2 {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+section[id="Hébergement"] .hebergement-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+section[id="Hébergement"] .hebergement-gallery .text {
+    padding: 0.6rem 0.8rem;
+    background: rgba(0,0,0,0.25);
+    color: #fff;
+}
+
+@media (min-width: 900px) {
+    section[id="Hébergement"] .hebergement-gallery { grid-template-columns: repeat(4, 1fr); }
+}

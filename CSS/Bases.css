@@ -92,6 +92,12 @@ section[id="Nos activités"] .content {
     grid-area: content
     ;}
 
+section[id="Hébergement"] img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 /* per-section header rules removed to avoid duplicate backgrounds;
    the site background is now handled at the top-level html, body selector */

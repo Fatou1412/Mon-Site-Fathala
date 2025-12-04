@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="CSS/Accueil.css">
     <link rel="stylesheet" href="CSS/Nous.css">
     <link rel="stylesheet" href="CSS/Activités.css">
+    <link rel="stylesheet" href="CSS/Hebergement.css">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
     
@@ -138,7 +139,72 @@
             <button class="btn" onclick="window.location.href = '#accueil' ;">Accueil</button>
         </div>
         <div class="content">
+            <div class="hebergement-intro">
+                <h3 class="hebergement-title">Suite en tentes de luxe</h3>
+                <p class="hebergement-desc"> Séjournez dans l'une de nos Suites Tente Aménagées, l'option idéale pour une immersion nature sans négliger votre bien-être.
 
+Chaque suite est une tente safari spacieuse et bien équipée, conçue pour allier le plaisir d'une nuit en brousse avec un confort essentiel et soigné. Vous y trouverez un lit double confortable, un espace salon simple et une salle de bain privée attenante avec eau courante.
+
+Le véritable atout ? Votre terrasse semi-privée est votre fenêtre sur le monde sauvage. Un lieu calme pour observer la faune de la réserve animale au lever ou au coucher du soleil.
+
+C'est l'expérience safari authentique, dans un cadre serein et confortable.</p>
+            </div>
+
+            <div class="hebergement-gallery" data-gallery="main">
+                <input type="checkbox" id="gallery-main-1" class="gallery-input" hidden>
+                <label for="gallery-main-1" class="bordure2 ombre2 tente-card">
+                    <img src="pics/CHAMBRE LUXE.webp" alt="Chambre luxe">
+                </label>
+
+                <input type="checkbox" id="gallery-main-2" class="gallery-input" hidden>
+                <label for="gallery-main-2" class="bordure2 ombre2 tente-card">
+                    <img src="pics/luxury-bedroom-view.jpg" alt="Luxury bedroom view">
+                </label>
+
+                <input type="checkbox" id="gallery-main-3" class="gallery-input" hidden>
+                <label for="gallery-main-3" class="bordure2 ombre2 tente-card">
+                    <img src="pics/suite sous tente de luxe 1.webp" alt="Suite sous tente">
+                </label>
+
+                <input type="checkbox" id="gallery-main-4" class="gallery-input" hidden>
+                <label for="gallery-main-4" class="bordure2 ombre2 tente-card">
+                    <img src="pics/SUITE TENTE DE LUXE JACUZZI.webp" alt="Suite jacuzzi">
+                </label>
+            </div>
+
+            <!-- Deuxième section d'hébergement -->
+            <div class="hebergement-intro">
+                <h3 class="hebergement-title">Suite de luxe </h3>
+                <p class="hebergement-desc"> Nous vous invitons à vivre une expérience d'hébergement unique, où le réveil se fait au cœur de la vie sauvage.
+
+Nos Tentes Suites sont conçues pour être votre refuge confortable et privé au sein de la réserve. Chaque suite est une structure de type safari spacieuse et joliment aménagée, vous assurant un sommeil réparateur après vos journées d'exploration. Vous y trouverez un lit douillet, ainsi que toutes les commodités essentielles, notamment une salle de bain privée attenante avec eau courante.
+
+Mais le véritable enchantement se trouve à l'extérieur. Votre terrasse ombragée est votre poste d'observation exclusif. Un espace serein où vous pourrez vous détendre et prendre le temps d'observer tranquillement l'activité de la faune environnante.
+
+C'est la promesse d'une immersion authentique et mémorable, enveloppée dans un confort simple et soigné.</p>
+            </div>
+
+            <div class="hebergement-gallery" data-gallery="secondary">
+                <input type="checkbox" id="gallery-secondary-1" class="gallery-input" hidden>
+                <label for="gallery-secondary-1" class="bordure2 ombre2 tente-card">
+                    <img src="pics/SUITE DE LUXE 1.webp" alt="Chambre luxe">
+                </label>
+
+                <input type="checkbox" id="gallery-secondary-2" class="gallery-input" hidden>
+                <label for="gallery-secondary-2" class="bordure2 ombre2 tente-card">
+                    <img src="pics/SUITE DE LUXE 2.webp" alt="Luxury bedroom view">
+                </label>
+
+                <input type="checkbox" id="gallery-secondary-3" class="gallery-input" hidden>
+                <label for="gallery-secondary-3" class="bordure2 ombre2 tente-card">
+                    <img src="pics/SUITE LUXE 2.webp" alt="Suite sous tente">
+                </label>
+
+                <input type="checkbox" id="gallery-secondary-4" class="gallery-input" hidden>
+                <label for="gallery-secondary-4" class="bordure2 ombre2 tente-card">
+                    <img src="pics/SUITE LUXE 3.webp" alt="Suite jacuzzi">
+                </label>
+            </div>
         </div>
     </section>
     <section id="Restauration">
@@ -159,6 +225,5 @@
 
         </div>
     </section>
-    <script src="JS/puzzle.js"></script>
 </body>
 </html>

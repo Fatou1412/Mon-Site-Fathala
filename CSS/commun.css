@@ -64,6 +64,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.7px);
     -webkit-backdrop-filter: blur(4.7px);
+    color: #ffffff; /* make page titles white */
 }
 
 .headerall h2:before, .headerall h2:after {
@@ -110,4 +111,28 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+/* Option 2: titles remain white, body text uses a warm cream for better
+   readability while preserving the photographic background. */
+:root {
+    --body-text-color: #F5EBD6; /* soft cream/beige */
+}
+
+/* Apply body text color to common content blocks, keep backgrounds transparent */
+.content > p,
+.content .explis,
+.content .explis span,
+.content .bordure,
+.content .bordure2,
+.hebergement-desc {
+    background: transparent;
+    color: var(--body-text-color);
+    padding: 0; /* respect existing layout padding */
+    border-radius: 0;
+}
+
+/* Headings remain white for strong contrast */
+.content h1, .content h2, .content h3, .headerall h2 {
+    color: #ffffff;
 }
