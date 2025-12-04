@@ -1,0 +1,42 @@
+#Restauration .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "salle recette1 recette2"
+        "salle recette3 recette4"
+        "salle recette5";
+    gap: 20px;
+    height: 60vh;
+    width: 80%;
+    margin: 5vh auto;
+}
+
+#Restauration .content #salle {
+    grid-area: salle;
+    background-color: aqua;
+}
+
+#Restauration .content #recette1 {
+    grid-area: recette1;
+    background-color: lightcoral;
+}
+
+#Restauration .content #recette2 {
+    grid-area: recette2;
+    background-color: lightgreen;
+}
+
+#Restauration .content #recette3 {
+    grid-area: recette3;
+    background-color: lightblue;
+}
+
+#Restauration .content #recette4 {
+    grid-area: recette4;
+    background-color: lightpink;
+}
+#Restauration .content #recette5 {
+    grid-area: recette5;
+    background-color: lightyellow;
+}
