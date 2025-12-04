@@ -1,128 +1,160 @@
-.Nos.activités {
-    font-size: 0.95rem;
-    font-weight: 700;
-    padding: 0.35rem 0.5rem;
-    text-align: center; /* center label text inside activity tiles */
-    box-sizing: border-box;
-    max-width: 220px;
+/* Page Nos activités : structure verticale défilante avec blocs horizontaux */
+
+section[id="Nos activités"] .content {
+    display: flex;
+    flex-direction: column;
+    /* vertical spacing between activity blocks */
+    gap: 0.6rem;
+    padding: 0;
     width: 100%;
-    margin: 0.25rem auto;
 }
 
-section[id="Nos activités"] > .content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-    align-items: center;
-    justify-items: center;
-    min-height: 180px; /* reduced to bring content closer */
-    padding: 0.5rem 0.6rem; /* minimal padding */
-    gap: 0rem; /* eliminate gap between items */
-}
-
-
-section[id="Nos activités"] > .content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-    align-items: center;
-    justify-items: center;
-    gap: 0.001rem; /* eliminate gap between items */
-}
-
-#liste {
-    width: 80%; /* slightly narrower to compact the table */
-    background: rgba(2, 15, 20, 0.6);
-    padding: 0.4%;
-    color: white;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(110px, 1fr));
-    gap: 0.001rem; /* smaller gap between tiles */
-    justify-items: center;
-}
-/* bring the first table up to eliminate gap */
-#liste {
-    margin: 0 auto; /* no margins */
-    transform: translateY(-8px);
-    z-index: 1;
-}
-
-
-/* Conteneur d'explications avec position relative */
-.content #explications {
-    overflow: hidden;
-    height: 95%;
-    width: 50%;
-    position: relative;
-}
-
-section[id="Nos activités"] #liste:hover {
-    cursor: pointer;
-}
-
-section[id="Nos activités"] .content i {
-    margin: 5px 20px 0 10px;
-}
-
-#explications div span {
-    background: rgba(255, 255, 255, 0.72);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    font-size: 1rem;
-    font-weight: bolder;
-    text-align: center;
-    padding: 0.7rem;
-    display: block;
-}
-
-/* Tous les divs d'explication cachés hors-écran par défaut */
-#explications div {
-    position: absolute;
-    bottom: -110%;
-    height: 100%;
+/* Chaque bloc d'activité : image gauche + texte droite */
+.activité-block {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    transition: bottom 0.8s ease-in-out;
-    padding: 1rem;
-    box-sizing: border-box;
-    background-size: cover;
+    /* make blocks compact: remove large min-height */
+    min-height: auto;
+    align-items: center; /* vertically center text and image */
+    gap: 1rem; /* small horizontal separation between image and text */
+    padding: 0.4rem 0; /* small vertical padding between blocks */
+}
+
+/* Image : colonne gauche, centrage */
+.activité-image {
+    width: 40%;
+    /* show images larger but contained, and make them span the text height better */
+    background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.12); /* subtle border to show limits */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    overflow: hidden;
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease;
+    will-change: transform;
 }
 
-/* Utiliser :has() avec le parent .content pour détecter le survol */
-section[id="Nos activités"] .content:has(.Nos.activités:nth-child(1):hover) #expl1 {
-    bottom: 0;
+/* Hover animation: pop the image slightly on pointer hover */
+@media (hover: hover) {
+    .activité-image:hover {
+        transform: translateY(-6px) scale(1.05);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.42);
+        z-index: 3;
+    }
+}
+
+/* Checkerboard overlay / damier effect */
+.activité-image {
+    position: relative; /* for overlay pseudo-element */
+}
+
+.activité-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><rect width='20' height='20' fill='rgba(255,255,255,0.06)'/><rect x='20' y='20' width='20' height='20' fill='rgba(255,255,255,0.06)'/></svg>");
+    background-size: 40px 40px;
+    opacity: 0;
+    transition: opacity 300ms ease, transform 420ms ease;
+}
+
+@keyframes checkerShift {
+    0% { background-position: 0 0; }
+    50% { background-position: 20px 20px; }
+    100% { background-position: 0 0; }
+}
+
+@media (hover: hover) {
+    .activité-image:hover::before {
+        opacity: 1;
+        animation: checkerShift 900ms linear infinite;
+        transform: scale(1.02);
+    }
+}
+
+#img1 {
     background-image: url("../pics/Safari Guidée.jpg");
 }
 
-section[id="Nos activités"] .content:has(.Nos.activités:nth-child(2):hover) #expl2 {
-    bottom: 0;
+#img2 {
     background-image: url("../pics/rencontre avec le lion.jpg");
 }
 
-section[id="Nos activités"] .content:has(.Nos.activités:nth-child(3):hover) #expl3 {
-    bottom: 0;
+#img3 {
     background-image: url("../pics/voyage mangrove.jpg");
 }
 
-section[id="Nos activités"] .content:has(.Nos.activités:nth-child(4):hover) #expl4 {
-    bottom: 0;
+#img4 {
     background-image: url("../pics/EXCURSION ILE 1.jpg");
 }
 
-section[id="Nos activités"] .content:has(.Nos.activités:nth-child(5):hover) #expl5 {
-    bottom: 0;
+#img5 {
     background-image: url("../pics/visite du village.jpg");
 }
 
-section[id="Nos activités"] .content:has(.Nos.activités:nth-child(6):hover) #expl6 {
-    bottom: 0;
+#img6 {
     background-image: url("../pics/SAFARI ET OISEAUX.jpg");
 }
 
-/* Tuile survolée : changement de couleur */
-.Nos.activités:hover {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.6) !important;
+/* Texte : colonne droite */
+.activité-texte {
+    width: 60%;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.25rem; /* minimal gap between title and text */
+}
+
+.activité-texte h3 {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+    font-weight: 700;
+    line-height: 1.2;
+    order: 1;
+}
+
+.activité-texte p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: justify;
+    order: 2;
+}
+
+/* Alternation des côtés : texte à gauche pour activités paires */
+.activité-block:nth-child(even) {
+    flex-direction: row;
+}
+
+/* Styles for puzzle pieces created by JS */
+.puzzle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.piece {
+    position: absolute;
+    box-sizing: border-box;
+    will-change: transform, opacity;
+    /* subtle separators between pieces */
+    border: 0.5px solid rgba(0,0,0,0.08);
 }
