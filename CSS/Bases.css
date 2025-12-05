@@ -14,6 +14,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    /* prevent the whole page from scrolling; sections control their own scrolls */
     overflow: hidden;
     font-family: var(--font-main);
 }
@@ -44,10 +45,10 @@ img {
     align-items: center;
 }
 
-header, section[id="A propos de nous"], section[id="Hébergement"], section[id="Restauration"], section[id="Gallerie"] {
+header, section[id="A propos de nous"], section[id="Hébergement"], section[id="Restauration"], section[id="Galerie"] {
     min-height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow: auto;
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto 1fr;
@@ -56,6 +57,26 @@ header, section[id="A propos de nous"], section[id="Hébergement"], section[id="
         "headerall headerall headerall"
         "content content content"
         ;
+}
+
+/* Override Restauration to allow scrolling like Activités */
+section[id="Restauration"] {
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "headerall"
+        "content";
+}
+
+section[id="Restauration"] .content {
+    grid-area: content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Section Nos activités : structure défilante spéciale */

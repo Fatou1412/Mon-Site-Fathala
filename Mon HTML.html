@@ -30,7 +30,7 @@
                     <li class="btn-1"> <a href="#Nos activités">Nos activités</a> </li>
                     <li class="btn-1"> <a href="#Hébergement">Hébergement</a> </li>
                     <li class="btn-1"> <a href="#Restauration">Restauration</a> </li>
-                    <li class="btn-1"> <a href="#Gallerie">Gallerie</a> </li>
+                    <li class="btn-1"> <a href="#Galerie">Galerie</a> </li>
                 </ul>
             </nav>
         </div>
@@ -141,7 +141,7 @@
         </div>
         <div class="content">
             <div class="hebergement-intro">
-                <h3 class="hebergement-title">Suite en tentes de luxe</h3>
+                <h3 class="hebergement-title">Suites en tentes</h3>
                 <p class="hebergement-desc"> Séjournez dans l'une de nos Suites Tente Aménagées, l'option idéale pour une immersion nature sans négliger votre bien-être.
 
 Chaque suite est une tente safari spacieuse et bien équipée, conçue pour allier le plaisir d'une nuit en brousse avec un confort essentiel et soigné. Vous y trouverez un lit double confortable, un espace salon simple et une salle de bain privée attenante avec eau courante.
@@ -175,7 +175,7 @@ C'est l'expérience safari authentique, dans un cadre serein et confortable.</p>
 
             <!-- Deuxième section d'hébergement -->
             <div class="hebergement-intro">
-                <h3 class="hebergement-title">Suite de luxe </h3>
+                <h3 class="hebergement-title">Suites de luxe </h3>
                 <p class="hebergement-desc"> Nous vous invitons à vivre une expérience d'hébergement unique, où le réveil se fait au cœur de la vie sauvage.
 
 Nos Tentes Suites sont conçues pour être votre refuge confortable et privé au sein de la réserve. Chaque suite est une structure de type safari spacieuse et joliment aménagée, vous assurant un sommeil réparateur après vos journées d'exploration. Vous y trouverez un lit douillet, ainsi que toutes les commodités essentielles, notamment une salle de bain privée attenante avec eau courante.
@@ -214,42 +214,118 @@ C'est la promesse d'une immersion authentique et mémorable, enveloppée dans un
             <button class="btn" onclick="window.location.href = '#accueil' ;">Accueil</button>
         </div>
         <div class="content">
-            <div id="salle" class="bordure ombre"></div>
-            <div id="recette1" class="bordure ombre">
-                <h2> "Thieboudienne": Le plat national</h2>
-                <p> Le Thiéboudienne (riz au poisson) est le cœur de la cuisine sénégalaise.
-Symbole de l'hospitalité (Téranga), ce plat est traditionnellement préparé avec soin pour accueillir nos hôtes. Un mélange savoureux de riz, poisson et légumes mijotés.
-Une immersion culinaire essentielle.</p>
+            <div id="salle" class="bordure ombre">
+                <img src="pics/RESTAURANT.jpg" alt="Restaurant">
+            </div>
 
+            <!-- Recette 1: click to reveal text -->
+            <div id="recette1" class="bordure ombre">
+                <input type="checkbox" id="resta-toggle-1" class="resto-toggle" hidden>
+                <label for="resta-toggle-1" class="resto-label">
+                    <img src="pics/Thieboudieune.jpg" alt="Thieboudienne">
+                </label>
+                <div class="resto-text">
+                    <h2>"Thieboudienne": Le plat national</h2>
+                    <p>Le Thiéboudienne (riz au poisson) est le cœur de la cuisine sénégalaise. Symbole de l'hospitalité (Téranga), ce plat est traditionnellement préparé avec soin pour accueillir nos hôtes. Un mélange savoureux de riz, poisson et légumes mijotés. Une immersion culinaire essentielle.</p>
+                </div>
             </div>
+
+            <!-- Recette 2 -->
             <div id="recette2" class="bordure ombre">
-                <h2> Yassa Poulet: Saveurs épicées</h2>
-                <p> Le Yassa Poulet est un plat emblématique du Sénégal, célèbre pour ses saveurs audacieuses et épicées. Préparé avec du poulet mariné dans une sauce à base d'oignons, de citron et de moutarde, il est ensuite mijoté jusqu'à tendreté. Servi avec du riz, ce plat offre un équilibre parfait entre acidité et épices, reflétant la richesse de la cuisine sénégalaise.</p>
+                <input type="checkbox" id="resta-toggle-2" class="resto-toggle" hidden>
+                <label for="resta-toggle-2" class="resto-label">
+                    <img src="pics/Yassa Poulet.webp" alt="Yassa Poulet">
+                </label>
+                <div class="resto-text">
+                    <h2>Yassa Poulet: Saveurs épicées</h2>
+                    <p>Le Yassa Poulet est un plat emblématique du Sénégal, célèbre pour ses saveurs audacieuses et épicées. Préparé avec du poulet mariné dans une sauce à base d'oignons, de citron et de moutarde, il est ensuite mijoté jusqu'à tendreté. Servi avec du riz, ce plat offre un équilibre parfait entre acidité et épices.</p>
+                </div>
             </div>
+
+            <!-- Recette 3 -->
             <div id="recette3" class="bordure ombre">
-                <h2> Mafé: Ragoût d'arachide</h2>
-                <p> Le Mafé est un ragoût traditionnel sénégalais à base de pâte d'arachide, souvent préparé avec du bœuf ou du poulet. Ce plat riche et savoureux est mijoté avec des légumes comme les carottes, les pommes de terre et les patates douces, créant une sauce onctueuse et légèrement sucrée. Servi avec du riz, le Mafé est un incontournable de la cuisine sénégalaise, apprécié pour son goût réconfortant et sa texture veloutée.</p>
-                
+                <input type="checkbox" id="resta-toggle-3" class="resto-toggle" hidden>
+                <label for="resta-toggle-3" class="resto-label">
+                    <img src="pics/mafe senegal.webp" alt="Mafé">
+                </label>
+                <div class="resto-text">
+                    <h2>Mafé: Ragoût d'arachide</h2>
+                    <p>Le Mafé est un ragoût traditionnel sénégalais à base de pâte d'arachide, souvent préparé avec du bœuf ou du poulet. Ce plat riche et savoureux est mijoté avec des légumes comme les carottes, les pommes de terre et les patates douces, créant une sauce onctueuse et légèrement sucrée. Servi avec du riz.</p>
+                </div>
             </div>
+
+            <!-- Recette 4 -->
             <div id="recette4" class="bordure ombre">
-                <h2> Pastels: Délices frits</h2>
-                <p> Les Pastels sont des beignets frits populaires au Sénégal, souvent farcis de poisson, de viande ou de légumes. Ces petites bouchées croustillantes sont assaisonnées avec des épices locales, offrant une explosion de saveurs à chaque bouchée. Servis en apéritif ou en snack, les Pastels sont un incontournable de la cuisine sénégalaise, parfaits pour partager entre amis ou en famille.</p> 
-            
-            </div>  
+                <input type="checkbox" id="resta-toggle-4" class="resto-toggle" hidden>
+                <label for="resta-toggle-4" class="resto-label">
+                    <img src="pics/pastels.webp" alt="Pastels">
+                </label>
+                <div class="resto-text">
+                    <h2>Pastels: Délices frits</h2>
+                    <p>Les Pastels sont des beignets frits populaires au Sénégal, souvent farcis de poisson, de viande ou de légumes. Ces petites bouchées croustillantes sont assaisonnées avec des épices locales, offrant une explosion de saveurs.</p>
+                </div>
+            </div>
+
+            <!-- Recette 5 -->
             <div id="recette5" class="bordure ombre">
-                <h2> Thiakry: Dessert sucré</h2>
-                <p> Le Thiakry est un dessert traditionnel sénégalais à base de couscous de mil, mélangé avec du yaourt sucré et parfumé à la vanille ou à la noix de coco. Ce dessert frais et léger est souvent garni de fruits secs ou frais, offrant une combinaison parfaite de textures et de saveurs. Le Thiakry est un incontournable de la cuisine sénégalaise, apprécié pour sa douceur et sa simplicité.</p>
-            
-            </div>  
+                <input type="checkbox" id="resta-toggle-5" class="resto-toggle" hidden>
+                <label for="resta-toggle-5" class="resto-label">
+                    <img src="pics/RESTAURANT THIAKRY.webp" alt="Thiakry">
+                </label>
+                <div class="resto-text">
+                    <h2>Thiakry: Dessert sucré</h2>
+                    <p>Le Thiakry est un dessert traditionnel sénégalais à base de couscous de mil, mélangé avec du yaourt sucré et parfumé à la vanille ou à la noix de coco. Ce dessert frais et léger est souvent garni de fruits secs ou frais.</p>
+                </div>
+            </div>
         </div>
     </section>
-    <section id="Gallerie">
+    <section id="Galerie">
         <div class="headerall">
-            <h2>Gallerie de la réserve</h2>
+            <h2>Galerie de la réserve</h2>
             <button class="btn" onclick="window.location.href = '#accueil' ;">Accueil</button>
         </div>
         <div class="content">
-
+            <div class="gallery-grid">
+                <img src="pics/Galerie1.jpg" alt="Galerie 1" class="gallery-item bordure ombre">
+                <img src="pics/Galerie2.jpg" alt="Galerie 2" class="gallery-item bordure ombre">
+                <img src="pics/Galerie3.jpg" alt="Galerie 3" class="gallery-item bordure ombre">
+                <img src="pics/Galerie4.jpg" alt="Galerie 4" class="gallery-item bordure ombre">
+                <img src="pics/Galerie5.jpg" alt="Galerie 5" class="gallery-item bordure ombre">
+                <img src="pics/Galerie6.jpg" alt="Galerie 6" class="gallery-item bordure ombre">
+                <img src="pics/Galerie7.jpg" alt="Galerie 7" class="gallery-item bordure ombre">
+                <img src="pics/Galerie8.jpg" alt="Galerie 8" class="gallery-item bordure ombre">
+                <img src="pics/Galerie9.jpg" alt="Galerie 9" class="gallery-item bordure ombre">
+                <img src="pics/Galerie10.jpg" alt="Galerie 10" class="gallery-item bordure ombre">
+                <img src="pics/Galerie11.jpg" alt="Galerie 11" class="gallery-item bordure ombre">
+                <img src="pics/Galerie12.jpg" alt="Galerie 12" class="gallery-item bordure ombre">
+                <img src="pics/Galerie13.jpg" alt="Galerie 13" class="gallery-item bordure ombre">
+                <img src="pics/Galerie14.jpg" alt="Galerie 14" class="gallery-item bordure ombre">
+                <img src="pics/Galerie15.jpg" alt="Galerie 15" class="gallery-item bordure ombre">
+                <img src="pics/Galerie16.jpg" alt="Galerie 16" class="gallery-item bordure ombre">
+                <img src="pics/Galerie17.jpg" alt="Galerie 17" class="gallery-item bordure ombre">
+                <img src="pics/Galerie18.jpg" alt="Galerie 18" class="gallery-item bordure ombre">
+                <img src="pics/Galerie19.jpg" alt="Galerie 19" class="gallery-item bordure ombre">
+                <img src="pics/Galerie20.jpg" alt="Galerie 20" class="gallery-item bordure ombre">
+                <img src="pics/Galerie21.jpg" alt="Galerie 21" class="gallery-item bordure ombre">
+                <img src="pics/Galerie22.jpg" alt="Galerie 22" class="gallery-item bordure ombre">
+                <img src="pics/Galerie23.jpg" alt="Galerie 23" class="gallery-item bordure ombre">
+                <img src="pics/Galerie24.jpg" alt="Galerie 24" class="gallery-item bordure ombre">
+                <img src="pics/Galerie25.jpg" alt="Galerie 25" class="gallery-item bordure ombre">
+                <img src="pics/Galerie26.jpg" alt="Galerie 26" class="gallery-item bordure ombre">
+                <img src="pics/Galerie27.jpg" alt="Galerie 27" class="gallery-item bordure ombre">
+                <img src="pics/Galerie28.jpg" alt="Galerie 28" class="gallery-item bordure ombre">
+                <img src="pics/Galerie29.jpg" alt="Galerie 29" class="gallery-item bordure ombre">
+                <img src="pics/Galerie30.jpg" alt="Galerie 30" class="gallery-item bordure ombre">
+                <img src="pics/Galerie31.jpg" alt="Galerie 31" class="gallery-item bordure ombre">
+                <img src="pics/Galerie32.jpg" alt="Galerie 32" class="gallery-item bordure ombre">
+                <img src="pics/Galerie33.jpg" alt="Galerie 33" class="gallery-item bordure ombre">
+                <img src="pics/Galerie34.jpg" alt="Galerie 34" class="gallery-item bordure ombre">
+                <img src="pics/Galerie35.jpg" alt="Galerie 35" class="gallery-item bordure ombre">
+                <img src="pics/Galerie36.jpg" alt="Galerie 36" class="gallery-item bordure ombre">
+                <img src="pics/Fathala-gallery-24.jpg" alt="Galerie 37" class="gallery-item bordure ombre">
+                <img src="pics/Fathala-gallery-49.jpg" alt="Galerie 38" class="gallery-item bordure ombre">
+                <img src="pics/Fathala-main-lodge-swimming-pool.jpg" alt="Galerie 39" class="gallery-item bordure ombre">
+                <img src="pics/Saloum.jpg" alt="Galerie 40" class="gallery-item bordure ombre">
         </div>
     </section>
 </body>

@@ -1,0 +1,169 @@
+/* Layout grid for the Restauration content */
+#Restauration .content {
+    display: grid;
+    grid-template-columns: 300px 300px 380px 300px 300px;
+    grid-template-rows: 300px 380px 300px;
+    grid-template-areas:
+        ". . recette1 . ."
+        "recette5 salle salle salle recette2"
+        ". recette4 . recette3 .";
+    gap: 0px;
+    padding: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#Restauration .content #salle {
+    grid-area: salle;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+#Restauration .content #recette1 {
+    grid-area: recette1;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+#Restauration .content #recette2 {
+    grid-area: recette2;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+#Restauration .content #recette3 {
+    grid-area: recette3;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+#Restauration .content #recette4 {
+    grid-area: recette4;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+#Restauration .content #recette5 {
+    grid-area: recette5;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+
+/* Move recipes slightly toward the center so they sit close to the salle */
+#Restauration .content #recette1 { /* top center - nudge down but not overlapping the salle */
+    transform: translateY(-30px) translateX(30px);
+}
+#Restauration .content #recette5 { /* middle left - move sharply toward the salle and up a bit */
+    transform: translateX(220px) translateY(-70px);
+}
+#Restauration .content #recette2 { /* middle right - move sharply toward the salle and up a bit */
+    transform: translateX(-270px) translateY(-70px);
+}
+#Restauration .content #recette4 { /* bottom center */
+    transform: translateY(-30px) translateX(70px);
+}
+#Restauration .content #recette3 { /* bottom right, nudge diagonally */
+    transform: translateY(-60px) translateX(-70px);
+}
+
+/* Smooth transform transitions */
+#Restauration .content #recette1,
+#Restauration .content #recette2,
+#Restauration .content #recette3,
+#Restauration .content #recette4,
+#Restauration .content #recette5 {
+    transition: transform 0.25s ease;
+}
+
+
+/* New interaction: click image (label) to reveal text below the image using a hidden checkbox */
+#Restauration .content .resto-toggle {
+    display: none;
+}
+
+#Restauration .content div {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#Restauration .content .resto-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#Restauration .content .resto-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+/* Ensure the salle image and any direct img inside cards are sized the same */
+#Restauration .content div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+#Restauration .content .resto-text {
+    /* positioned to slide up from the bottom of the circular image */
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%); /* hidden just below the circle */
+    width: 85%;
+    box-sizing: border-box;
+    padding: 0.6rem 0.9rem;
+    background-color: rgba(0, 0, 0, 0.65); /* darker translucent background for readability */
+    color: #fff;
+    border-radius: 14px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none; /* avoid accidental interactions when hidden */
+    transition: transform 0.28s cubic-bezier(.2,.9,.3,1), opacity 0.2s ease;
+}
+
+/* Show the text on hover (or when checkbox is checked) */
+#Restauration .content div:hover .resto-text,
+#Restauration .content .resto-label:hover + .resto-text,
+#Restauration .content .resto-toggle:checked + .resto-label + .resto-text {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#Restauration .content .resto-text h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    color: #fff;
+}
+
+#Restauration .content .resto-text p {
+    margin: 0 0 1rem 0;
+    color: #fff;
+}
+
+
+
