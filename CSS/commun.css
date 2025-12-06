@@ -136,3 +136,18 @@
 .content h1, .content h2, .content h3, .headerall h2 {
     color: #ffffff;
 }
+
+/* Center section titles (h2 inside .headerall when used within sections) */
+section > .headerall {
+    justify-content: center; /* center the title horizontally */
+    position: relative;      /* allow absolutely positioned button */
+}
+
+/* Keep the section "Accueil"/header logo/nav layout unaffected by targeting only section .headerall
+   Move the .btn in section headers to the right so it doesn't disrupt centered title */
+section > .headerall .btn {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}

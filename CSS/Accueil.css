@@ -52,3 +52,12 @@ header .content p {
     top: -25vh;
     left: -15vh;
 }
+
+/* Ensure the Accueil section text is always white regardless of other rules */
+#accueil .content,
+#accueil .content h1,
+#accueil .content p,
+#accueil .content span,
+#accueil .content a {
+    color: #ffffff !important;
+}

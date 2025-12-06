@@ -17,15 +17,16 @@ html, body {
     /* prevent the whole page from scrolling; sections control their own scrolls */
     overflow: hidden;
     font-family: var(--font-main);
-}
-
-/* Central site background applied uniformly to all pages */
-html, body {
+    /* Background image with a fallback background-color to avoid a white flash while the image loads */
+    background-color: #f3efe6; /* light neutral fallback similar to site palette */
     background-image: url("../pics/Saloum1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    /* Ensure the page is visible even if some browsers delay painting background-image */
+    visibility: visible;
+    opacity: 1;
 }
 
 img {
@@ -125,4 +126,163 @@ section[id="Hébergement"] img {
 
 header.headerall {
     grid-area: headerall;
+}
+
+/* ===================== Responsive rules ===================== */
+/* Make the site adapt to tablet and mobile without changing HTML */
+
+/* Small desktops / large tablets */
+@media (max-width: 1200px) {
+    .content { padding: 12px; }
+    header .logo { width: 160px; }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    /* allow normal page scrolling on small screens */
+    html, body { overflow: auto; height: auto; }
+
+    /* Stack sections vertically (single column) */
+    header, section[id="A propos de nous"], section[id="Hébergement"], section[id="Restauration"], section[id="Galerie"] {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "headerall"
+            "content";
+    }
+
+    /* Header adjustments */
+    .headerall { padding: 10px; }
+    .logo { width: 130px; }
+    nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0; margin: 8px 0; list-style: none; }
+    nav ul li { margin: 0; }
+
+    /* General content spacing */
+    .content { padding: 12px; }
+
+    /* Galerie grid adapts */
+    section[id="Galerie"] .content .galerie-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; }
+
+    /* Restauration: switch to stacked column for narrow screens */
+    section[id="Restauration"] .content { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 18px; }
+    section[id="Restauration"] .content #salle { width: min(320px, 70vw); height: auto; }
+    section[id="Restauration"] .content #recette1,
+    section[id="Restauration"] .content #recette2,
+    section[id="Restauration"] .content #recette3,
+    section[id="Restauration"] .content #recette4,
+    section[id="Restauration"] .content #recette5 { width: min(260px, 80vw); height: auto; transform: none !important; }
+    /* Put resto-text below images when stacked */
+    #Restauration .content .resto-text { position: relative; transform: none; left: auto; bottom: auto; width: 100%; margin-top: 6px; border-radius: 8px; }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    nav ul { flex-direction: column; align-items: center; }
+    header .logo { width: 120px; }
+    .content { padding: 8px; }
+
+    /* Galerie: 2 columns on small phones */
+    section[id="Galerie"] .content .galerie-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; gap: 10px; }
+    section[id="Galerie"] .content .gallery-item img { border-radius: 6px; }
+
+    /* Restauration tighter sizes for small phones */
+    section[id="Restauration"] .content #salle { width: min(280px, 86vw); }
+    section[id="Restauration"] .content #recette1,
+    section[id="Restauration"] .content #recette2,
+    section[id="Restauration"] .content #recette3,
+    section[id="Restauration"] .content #recette4,
+    section[id="Restauration"] .content #recette5 { width: min(220px, 86vw); }
+
+    /* Make sure large fixed elements shrink where necessary */
+    img { max-width: 100%; height: auto; }
+}
+
+/* Very small devices / narrow portrait */
+@media (max-width: 380px) {
+    section[id="Galerie"] .content .galerie-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+    nav ul { gap: 6px; }
+}
+
+/* End responsive rules */
+
+/* Lightbox (CSS-only using :target) */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.lightbox:target {
+    display: flex;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 28px;
+    background: rgba(255,255,255,0.06);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.lightbox .close:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* Make the gallery thumbnails indicate they are clickable and uniform size */
+.galerie-grid .gallery-item { overflow: hidden; }
+.galerie-grid .gallery-item a { display: block; }
+.galerie-grid .gallery-item img,
+.galerie-grid .gallery-item a img {
+    display: block;
+    width: 100%;
+    height: 220px; /* uniform thumbnail height */
+    object-fit: cover; /* crop to fill without distortion */
+    -o-object-fit: cover;
+    cursor: zoom-in;
+}
+
+/* Optional: if you want square thumbnails, change the height to match the column width or use aspect-ratio */
+.galerie-grid .gallery-item img[loading] { will-change: transform; }
+
+/* Galerie grid: 4 columns x auto rows (we'll place 40 items -> 10 rows). Section scrolls if necessary. */
+section[id="Galerie"] .content .galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+section[id="Galerie"] .content .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Ensure the Galerie section itself scrolls independently (already applied globally), but keep content full width */
+section[id="Galerie"] {
+    min-height: 100vh;
+    height: 100vh;
+    overflow: auto;
 }
