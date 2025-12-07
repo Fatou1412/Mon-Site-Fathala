@@ -5,6 +5,8 @@ section[id="Nos activités"] .content {
     padding: 0;
     width: 100%;
 }
+
+/* Chaque bloc d'activité : image gauche + texte droite */
 .activité-block {
     display: flex;
     flex-direction: row;
@@ -34,7 +36,6 @@ section[id="Nos activités"] .content {
     will-change: transform;
 }
 
-/* Hover animation: pop the image slightly on pointer hover */
 @media (hover: hover) {
     .activité-image:hover {
         transform: translateY(-6px) scale(1.05);
@@ -43,7 +44,6 @@ section[id="Nos activités"] .content {
     }
 }
 
-/* Checkerboard overlay / damier effect */
 .activité-image {
     position: relative; /* for overlay pseudo-element */
 }

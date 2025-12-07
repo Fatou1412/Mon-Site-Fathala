@@ -36,7 +36,7 @@ img {
 }
 
 .logo {
-    width: 180px; /* changez cette valeur si besoin */
+    width: 180px; 
     height: auto;
     display: block;
 }
@@ -60,7 +60,6 @@ header, section[id="A propos de nous"], section[id="Hébergement"], section[id="
         ;
 }
 
-/* Override Restauration to allow scrolling like Activités */
 section[id="Restauration"] {
     min-height: 100vh;
     height: 100vh;
@@ -80,7 +79,7 @@ section[id="Restauration"] .content {
     scroll-behavior: smooth;
 }
 
-/* Section Nos activités : structure défilante spéciale */
+
 section[id="Nos activités"] {
     width: 100vw;
     height: 100vh;
@@ -104,7 +103,6 @@ section[id="Nos activités"] .content {
     scroll-behavior: smooth;
 }
 
-/* Scroll toujours en haut de la page activités */
 section[id="Nos activités"] .content {
     scroll-position: 0;
 }
