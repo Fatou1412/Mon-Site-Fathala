@@ -1,30 +1,22 @@
-/* Page Nos activités : structure verticale défilante avec blocs horizontaux */
-
 section[id="Nos activités"] .content {
     display: flex;
     flex-direction: column;
-    /* vertical spacing between activity blocks */
     gap: 0.6rem;
     padding: 0;
     width: 100%;
 }
-
-/* Chaque bloc d'activité : image gauche + texte droite */
 .activité-block {
     display: flex;
     flex-direction: row;
     width: 100%;
-    /* make blocks compact: remove large min-height */
     min-height: auto;
-    align-items: center; /* vertically center text and image */
-    gap: 1rem; /* small horizontal separation between image and text */
-    padding: 0.4rem 0; /* small vertical padding between blocks */
+    align-items: center;
+    gap: 1rem; 
+    padding: 0.4rem 0; 
 }
 
-/* Image : colonne gauche, centrage */
 .activité-image {
     width: 40%;
-    /* show images larger but contained, and make them span the text height better */
     background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
